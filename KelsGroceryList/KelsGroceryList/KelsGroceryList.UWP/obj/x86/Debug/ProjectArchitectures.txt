@@ -1,0 +1,2 @@
+F:\xamarinLearning\1.xamFormsApps\KelsGroceryList\KelsGroceryList\KelsGroceryList.UWP\KelsGroceryList.UWP.csproj;x86
+F:\xamarinLearning\1.xamFormsApps\KelsGroceryList\KelsGroceryList\KelsGroceryList\KelsGroceryList.csproj;neutral

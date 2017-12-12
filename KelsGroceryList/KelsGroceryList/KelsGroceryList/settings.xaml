@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:KelsGroceryList;assembly=KelsGroceryList"
+             x:Class="KelsGroceryList.settings"
+             Title="Settings">
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout x:Name="topLevelLayout" Padding="30"
+                         VerticalOptions="Fill"
+                         BackgroundColor="Pink"
+                         >
+                <Image Source="icon.png" HorizontalOptions="Start" VerticalOptions="Start" />
+                <Button x:Name="clearAllDataButton" 
+                        Text="DELETE all data"
+                    Clicked="onClearData"
+                        
+                    />
+                <Label x:Name="clearAllDataLabel" 
+                       Text="This will clear all Items and ALL Categories so you can start over from scratch"
+                    VerticalOptions="Start" 
+                    HorizontalOptions="StartAndExpand" 
+                    
+                    />
+                <Label />
+                <Label />
+                <Button x:Name="clearOnlyItemsButton" 
+                        Text="DELETE ONLY items"
+                    Clicked="onClearItemsData"
+                        
+                    />
+                <Label x:Name="clearItemsLabel" 
+                       Text="This will clear all Items but will leave all Categories in place"
+                    VerticalOptions="Start" 
+                    HorizontalOptions="StartAndExpand" 
+                    
+                    />
+                <Label />
+                <Label />
+                <Button x:Name="colorButton" 
+                        Text="Change Colors" 
+                        Clicked="goToColorPage"
+                        />
+                <Label x:Name="colorChangeLabel" 
+                       Text="Change colors of this app"
+                    VerticalOptions="Start" 
+                    HorizontalOptions="StartAndExpand" 
+                    
+                    />
+                <Label />
+                <Label />
+                <Button x:Name="textSizeButton" 
+                        Text="Change Text Size" 
+                        Clicked="onTextSizeButton"
+                        />
+                <Label x:Name="textChangeLabel" 
+                       Text="Change the Text Size of all Text"
+                    VerticalOptions="Start" 
+                    HorizontalOptions="StartAndExpand" 
+                    
+                    />
+                <Label />
+                <Label />
+                <Button x:Name="tutorButton" 
+                        Text="Turn the Tutorial ON or OFF" 
+                        Clicked="onTutorButton"
+                        
+                        />
+                <Label x:Name="statusLabelt" 
+                       Text=""
+                    VerticalOptions="Start" 
+                    HorizontalOptions="StartAndExpand" 
+                    
+                    />
+                <Label />
+                <Label />
+                <Button x:Name="tutorButtonth" 
+                        Text="Browse the help screen" 
+                        Clicked="onTutorHelpButton"
+                        
+                        />
+                <Label x:Name="statusLabelth" 
+                       Text="Read the help/tutorial text on a single page"
+                    VerticalOptions="Start" 
+                    HorizontalOptions="StartAndExpand" 
+                    
+                    />
+                <Label />
+                <Label />
+                <Label />
+                <Button x:Name="cancelButton2" Text=" Go Back " WidthRequest="150" IsVisible="False"
+                    VerticalOptions="Start" 
+                    HorizontalOptions="StartAndExpand" 
+                    Clicked="onCancelButtonClicked"
+                        
+                        />
+                <Label />
+                <Label />
+                
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

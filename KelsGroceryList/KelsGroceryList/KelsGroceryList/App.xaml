@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KelsGroceryList.App">
+    <Application.Resources>
+
+        <ResourceDictionary>
+            <Color x:Key="PageBackgroundColor">Yellow</Color>
+            <Color x:Key="HeadingTextColor">Black</Color>
+            <Color x:Key="NormalTextColor">Blue</Color>
+            <Color x:Key="lvTextColor">Pink</Color>
+            <Font x:Key="text_size_small">Small</Font>
+            <Font x:Key="text_size_medium">Medium</Font>
+            <Font x:Key="text_size_large">Large</Font>
+
+            <Font x:Key="IOStext_size_small">12</Font>
+            <Font x:Key="IOStext_size_medium">18</Font>
+            <Font x:Key="IOStext_size_large">24</Font>
+
+            <Style x:Key="LabelPageHeadingStyle" TargetType="Label">
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="TextColor" Value="{StaticResource HeadingTextColor}" />
+            </Style>
+            <Style x:Key="LabelNormalStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource NormalTextColor}" />
+            </Style>
+            <Style TargetType="Label">
+                <Setter Property="Font" Value="{DynamicResource text_size}" />
+            </Style>
+            <!--<Style TargetType="Entry">
+                <Setter Property="Font" Value="{DynamicResource text_size}" />
+            </Style>-->
+            <Style TargetType="Button">
+                <Setter Property="Font" Value="{DynamicResource text_size}" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="BackgroundColor" Value="LightGray" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="Margin" Value="2" />
+                <Setter Property="BorderRadius" Value="10" />
+                <Setter Property="BorderColor" Value="Transparent" />
+                <Setter Property="BorderWidth" Value="1" />
+            </Style>
+
+        </ResourceDictionary>
+
+
+    </Application.Resources>
+</Application>

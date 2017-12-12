@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:KelsGroceryList;assembly=KelsGroceryList"
+             x:Class="KelsGroceryList.addItemPage"
+             Title="Add Item">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout x:Name="topLevelLayout" Padding="30"
+                         VerticalOptions="Fill"
+                         BackgroundColor="Pink"
+                         >
+                <Image Source="icon.png" HorizontalOptions="Start" VerticalOptions="Start" />
+                <Label x:Name="catLabel" Text="Category" Style="{StaticResource LabelNormalStyle}"
+                    VerticalOptions="Start"  />
+                <Entry x:Name="categoryEntry" 
+                    VerticalOptions="Start" 
+                    WidthRequest="50"
+                    Unfocused="onCategoryTextChanged"
+                       />
+                <Label x:Name="itemLabel" Text="New Item" Style="{StaticResource LabelNormalStyle}"
+                    VerticalOptions="Start"  />
+                <Entry x:Name="groceryEntry" 
+                    VerticalOptions="Start" 
+                       />
+                <Label x:Name="countLabel" Text="How many?" Style="{StaticResource LabelNormalStyle}"
+                    VerticalOptions="Start"  />
+                <Entry x:Name="countEntry" Keyboard="Numeric"
+                    WidthRequest="50"
+                    VerticalOptions="Start" 
+                       />
+                <Button x:Name="enterNewButton" Text="Enter/Save"
+                    VerticalOptions="Start" 
+                    HorizontalOptions="FillAndExpand" 
+                    Clicked="onEnterNewButtonClicked"
+                    />
+                <Label x:Name="statusMessage" Text="" Style="{StaticResource LabelNormalStyle}"
+                    VerticalOptions="Start" TextColor="Red" />
+                <Button x:Name="cancelButton" Text="Cancel"
+                    VerticalOptions="Start" 
+                    HorizontalOptions="FillAndExpand" 
+                    Clicked="onCancelButtonClicked"
+                    />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

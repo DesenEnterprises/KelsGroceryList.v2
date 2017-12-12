@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:KelsGroceryList;assembly=KelsGroceryList"
+             x:Class="KelsGroceryList.helpTutor">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="30" >
+                <Label Text="Welcome to Shop List (KelsGroceryList)!" Style="{StaticResource LabelNormalStyle}" FontSize="Large" />
+                <Label Text="This is a quick guide to help you to understand all the options available in KelsGroceryList." Style="{StaticResource LabelNormalStyle}" TextColor="Green" />
+                <Label Text="To get started, Click the ADD ITEMS button" Style="{StaticResource LabelNormalStyle}"  TextColor="Firebrick" />
+                <Label Text="Edit the Category text to add a new category. This can be either an existing category to add items to it, or you can change the text to create a new category." Style="{StaticResource LabelNormalStyle}" TextColor="Blue"  />
+                <Label Text="You can have as many categories as you want, and can use a Person's Name for gift lists, Store Names for shopping at specific stores, Types like 'dairy' or 'meat' to create lists for Grocery Shopping, or any other type of category you would like." Style="{StaticResource LabelNormalStyle}" TextColor="Green"  />
+                <Label Text="Then add a New Item and how many you need. To add more Items, click Enter/Save and then ADD ITEMS again." Style="{StaticResource LabelNormalStyle}" TextColor="Firebrick"  />
+                <Label Text="When a category is selected from the previous screen, it will automatically be placed here so you can easily add items to a category." Style="{StaticResource LabelNormalStyle}" TextColor="Blue"  />
+                <Label Text="" Style="{StaticResource LabelNormalStyle}" TextColor="Green"  />
+                
+                <Label Text="Category" Style="{StaticResource LabelNormalStyle}"
+                    VerticalOptions="Start"  />
+                <Entry Text="Add a category like Dairy or a person's name"
+                    VerticalOptions="Start" 
+                    WidthRequest="50"                    
+                       />
+                <Label Text="New Item" Style="{StaticResource LabelNormalStyle}"
+                    VerticalOptions="Start"  />
+                <Entry Text="Add an item like Milk or New X-Box" 
+                    VerticalOptions="Start" 
+                    WidthRequest="50"  
+                       />
+                <Label Text="How many?" Style="{StaticResource LabelNormalStyle}"
+                    VerticalOptions="Start"  />
+                <Entry Keyboard="Numeric" Text="Add the number of items you want"
+                    WidthRequest="50"
+                    VerticalOptions="Start" 
+                       />
+                <Label />
+                <Label Text="Then click the Enter/Save button" Style="{StaticResource LabelNormalStyle}" TextColor="Green"  />
+                <Label />
+                <Label Text="After clicking Enter/Save you will be brought to the main screen where your new category will appear in the top grid." Style="{StaticResource LabelNormalStyle}" TextColor="Firebrick"  />
+                <Label Text="Touch the category you created to see the item(s) in that category in the lower grid." Style="{StaticResource LabelNormalStyle}" TextColor="Blue"  />
+                <Label Text="Then when you've got that item in your shopping cart, just click the item to mark it as InTheCart DONE. It will be moved to the bottom of the list and all items not in your cart will remain above it." Style="{StaticResource LabelNormalStyle}" TextColor="Green"  />
+                <Label Text="When all of the items in a category have been added to your cart, you will be prompted to delete the category if you want to." Style="{StaticResource LabelNormalStyle}" TextColor="Firebrick"  />
+                <Label Text="You don't have to delete the category if you want to keep it, and you can click items that are DONE to delete individual items." Style="{StaticResource LabelNormalStyle}" TextColor="Blue"  />
+                <Label Text="You can clean up all items and/or all categories and items in the Settings." Style="{StaticResource LabelNormalStyle}" TextColor="Green"  />
+                <Label Text="You can also swipe any Category to delete that Category or tap an Item that's marked as DONE to optionally delete that item." Style="{StaticResource LabelNormalStyle}" TextColor="Firebrick"  />
+                <Label Text="" Style="{StaticResource LabelNormalStyle}" />
+
+                <Label Text="You can also change the colors of this app in the Settings." TextColor="Red" BackgroundColor="LightBlue"
+                VerticalOptions="StartAndExpand" 
+                HorizontalOptions="StartAndExpand" />
+
+                <Label Text="" Style="{StaticResource LabelNormalStyle}" />
+
+                <Label Text="And, you can" TextColor="SteelBlue" BackgroundColor="LavenderBlush" FontSize="Small"
+                VerticalOptions="StartAndExpand" 
+                HorizontalOptions="StartAndExpand" />
+                <Label Text="change the text size" TextColor="SteelBlue" BackgroundColor="LavenderBlush" FontSize="Medium"
+                VerticalOptions="StartAndExpand" 
+                HorizontalOptions="StartAndExpand" />
+                <Label Text="in the Settings page" TextColor="SteelBlue" BackgroundColor="LavenderBlush" FontSize="Large"
+                VerticalOptions="StartAndExpand" 
+                HorizontalOptions="StartAndExpand" />
+
+                <Label />
+                <Label />
+                
+                <Button x:Name="cancelButtonth" Text=" Go Back "
+                    VerticalOptions="Start" 
+                    HorizontalOptions="StartAndExpand" 
+                    Clicked="onCancelButtonClicked"
+                        />
+                <Label />
+                <Label />
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

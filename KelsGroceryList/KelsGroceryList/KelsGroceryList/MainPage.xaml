@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:dataControls="clr-namespace:Telerik.XamarinForms.DataControls;assembly=Telerik.XamarinForms.DataControls"
+             xmlns:telerikDataControls="clr-namespace:Telerik.XamarinForms.DataControls;assembly=Telerik.XamarinForms.DataControls"
+             xmlns:viewModels="clr-namespace:KelsGroceryList.ViewModels;assembly=KelsGroceryList"
+             xmlns:listView="clr-namespace:Telerik.XamarinForms.DataControls.ListView;assembly=Telerik.XamarinForms.DataControls"
+             xmlns:local="clr-namespace:KelsGroceryList;assembly=KelsGroceryList"
+             x:Class="KelsGroceryList.MainPage"
+             Title="">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text=" Settings " Clicked="goToSettingsPage"  />
+        <ToolbarItem  Icon="icon.png" />
+        <ToolbarItem Text=" Add Items " Clicked="goToAddItemPage"  />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.BindingContext>
+        <viewModels:ViewModel x:Name="ViewModel" />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout x:Name="topLevelLayout" 
+            VerticalOptions="FillAndExpand"
+                    BackgroundColor="Pink"
+                     >
+            <StackLayout.Padding>
+                <OnPlatform x:TypeArguments="Thickness"
+                                iOS="30"
+                                Android="10"
+                                WinPhone="8" />
+            </StackLayout.Padding>
+
+            
+                <Label x:Name="categoriesLabel" Text="Category" HeightRequest="33"
+                    VerticalOptions="StartAndExpand" WidthRequest="500" 
+                    HorizontalOptions="CenterAndExpand" 
+                    />
+
+                <!--<Button Text="openTestPage" Clicked="openTestPage"/>-->
+
+                <telerikDataControls:RadListView x:Name="categoriesListview" ItemsSource="{Binding Source}" 
+                                                 HeightRequest="200" 
+                                                 WidthRequest="500"
+                                                 ItemTapped="CategoryRadListView_OnItemTapped" 
+                                                 IsItemSwipeEnabled="True"
+                                                 ItemSwipeCompleted="categoryOnItemSwipeCompleted"
+                                                 SwipeOffset="100"
+                                                 SwipeThreshold="50"
+                                                 BackgroundColor="GhostWhite"
+                                                 >
+                    <telerikDataControls:RadListView.ItemTemplate>
+                        <DataTemplate>
+                            <listView:ListViewTemplateCell>
+                                <listView:ListViewTemplateCell.View>
+                                    <Grid>
+                                        <Label Margin="10" Text="{Binding Category}" Font="{DynamicResource text_size}" />
+                                    </Grid>
+                                </listView:ListViewTemplateCell.View>
+                            </listView:ListViewTemplateCell>
+                        </DataTemplate>
+                    </telerikDataControls:RadListView.ItemTemplate>
+                    <telerikDataControls:RadListView.ItemSwipeContentTemplate>
+                        <DataTemplate>
+                            <Grid Margin="0"
+                              Padding="0"
+                              ColumnSpacing="0"
+                              RowSpacing="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100" />
+                                </Grid.ColumnDefinitions>
+
+                                <Label 
+                               BackgroundColor="Red"
+                               HorizontalTextAlignment="Center"
+                               Text="delete"
+                               TextColor="White"
+                               VerticalTextAlignment="Center"
+                               WidthRequest="100" />
+                            </Grid>
+                        </DataTemplate>
+                    </telerikDataControls:RadListView.ItemSwipeContentTemplate>
+                </telerikDataControls:RadListView>
+
+                <Label x:Name="groceryListLabel" Text="Items needed" HeightRequest="33"
+                    VerticalOptions="Start" WidthRequest="500"
+                    HorizontalOptions="Center"                 
+                        />
+
+                <!--<telerikDataControls:RadListView x:Name="RADgroceriesListview" ItemsSource="{Binding groceryItemSource}" 
+                                                 VerticalOptions="StartAndExpand" 
+                                                 HorizontalOptions="Fill"
+                                                 ItemTapped="onItemSelect" 
+                                                 IsItemSwipeEnabled="True"
+                                                 ItemSwipeCompleted="groceryOnItemSwipeCompleted"
+                                                 SwipeOffset="10"
+                                                 SwipeThreshold="20"
+                                                 BackgroundColor="GhostWhite"                                                 
+                                                 >
+                    <telerikDataControls:RadListView.ItemTemplate>
+                        <DataTemplate>
+                            <listView:ListViewTemplateCell>
+                                <listView:ListViewTemplateCell.View>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Margin="10,10,0,10" Text="{Binding groceryItem}" Font="{DynamicResource text_size}" />
+                                        <Label Margin="1,10,0,10" Text="-" Font="{DynamicResource text_size}" />
+                                        <Label Margin="1,10,0,10" Text="{Binding Count}" Font="{DynamicResource text_size}" />
+                                        <Label Margin="1,10,0,10" Text="each" Font="{DynamicResource text_size}" />
+                                    </StackLayout>
+                                </listView:ListViewTemplateCell.View>
+                            </listView:ListViewTemplateCell>
+                        </DataTemplate>
+                    </telerikDataControls:RadListView.ItemTemplate>
+                    <telerikDataControls:RadListView.ItemSwipeContentTemplate>
+                        <DataTemplate>
+                            <Grid Margin="0"
+                              Padding="0"
+                              ColumnSpacing="0"
+                              RowSpacing="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100" />
+                                </Grid.ColumnDefinitions>
+
+                                <Label 
+                                   BackgroundColor="Red"
+                                   HorizontalTextAlignment="Center"
+                                   Text="delete"
+                                   TextColor="White"
+                                   VerticalTextAlignment="Center"
+                                   WidthRequest="100" />
+                            </Grid>
+                        </DataTemplate>
+                    </telerikDataControls:RadListView.ItemSwipeContentTemplate>
+                </telerikDataControls:RadListView>-->
+
+                <ListView x:Name="groceriesListview" ItemsSource="{Binding groceryItemSource}" 
+                    VerticalOptions="StartAndExpand" 
+                    HorizontalOptions="Fill"
+                    ItemSelected="onItemSelect"
+                    BackgroundColor="GhostWhite"
+                    HasUnevenRows="True"
+                    >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Margin="10,10,0,10" Text="{Binding groceryItem}" Font="{DynamicResource text_size}" />
+                                    <Label Margin="1,10,0,10" Text="-" Font="{DynamicResource text_size}" />
+                                    <Label Margin="1,10,0,10" Text="{Binding Count}" Font="{DynamicResource text_size}" />
+                                    <Label Margin="1,10,0,10" Text="each" Font="{DynamicResource text_size}" />
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    <ListView.Footer>
+                        <Label />
+                    </ListView.Footer>
+                </ListView>
+
+                    <Label x:Name="statusLabel" Text=""
+                    VerticalOptions="Start" 
+                        TextColor="Green"
+                    HorizontalOptions="CenterAndExpand" 
+                    
+                        />
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
